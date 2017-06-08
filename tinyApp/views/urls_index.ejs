@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+</head>
+<body>
+<% include partials/_header %>
+<ul>
+<% for (var url in urls) { %>
+<li>
+  <%= url %>: <%= urls[url] %>
+  <form action="/urls/<%=url%>/delete" method="POST">
+  <button type="submit">Delete</button>
+  </form>
+  <a href="/urls/<%=url%>">Edit</a>
+</li>
+<% } %>
+</ul>
+</body>
+</html>
