@@ -5,18 +5,14 @@
 </head>
 <body>
 <% include partials/_header %>
- <form action="/urls/<%= shortURL %>" method="post">
-    <h2>Edit this urls</h2>
-    <p>
-      <label for="url">ShortURL</label>
-      <input id="longUrl" name="Url">
-    </p>
-    <p>
-      <button>Update</button>
-    </p>
+<ul>
+<li>
+  <%= shortURL %>: <%= url %>
+  <form action="/urls/<%=url%>/delete" method="POST">
+  <button type="submit">Delete</button>
   </form>
+  <a href="/urls/<%=url%>"></a>
 </li>
-
-
+</ul>
 </body>
 </html>
