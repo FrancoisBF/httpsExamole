@@ -8,8 +8,13 @@
 <ul>
 <li>
   <%= shortURL %>: <%= url %>
+  <form action="/urls" method="POST">
+    <input name="longURL" type="text" value="<%=url%>">
+    <input type="hidden" name="shortURL" value="<%=shortURL%>" />
+    <input type="submit" value="Update">
+  </form>
   <form action="/urls/<%=url%>/delete" method="POST">
-  <button type="submit">Delete</button>
+    <button type="submit">Delete</button>
   </form>
   <a href="/urls/<%=url%>"></a>
 </li>

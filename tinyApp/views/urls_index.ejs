@@ -8,14 +8,13 @@
 <ul>
 <% for (var url in urls) { %>
 <li>
-  <a href="/u/<%= url %>">http://TinyApp.com/u/<%= url %></a>
-  -
-  <a href="<%= urls[url].longURL %>"><%= urls[url].longURL %></a>
+  ShortURL: <%= url %> LongURL:
+  <a href="http://<%= urls[url].longURL %>"><%= urls[url].longURL %></a>
   <form action="/urls/<%=url%>/delete" method="POST">
   <button type="submit">Delete</button>
   </form>
   <a href="/urls/<%=url%>">Edit</a>
-</li>
+  </li>
 <% } %>
 </ul>
 <p><a href="/urls/new">Shorten Url</a></p>
